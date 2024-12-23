@@ -4,33 +4,51 @@ using UnityEngine;
 
 public class SubstanceSpawner : MonoBehaviour
 {
-    public Transform spawnPosition;
-    private float timeUntilSpawn;
 
-    [SerializeField] float minimumTimeSpawn;
-    [SerializeField] float maximumTimeSpawn;
+    public float SubstanceTimeUntilSpawn;
+    public float BadSubstanceTimeUntilSpawn;
+
+
+    [SerializeField] float SubstanceMinimumTimeSpawn;
+    [SerializeField] float SubstanceMaximumTimeSpawn;
+
+    [SerializeField] float BadSubstanceMinimumTimeSpawn;
+    [SerializeField] float BadSubstanceMaximumTimeSpawn;
+
+    private float SpawnBadorGood;
     // Start is called before the first frame update
-    //create mini update loop with ienumerator
+    // UNCOMPLETE CODE (WARNING) FOR BAD AND GOOD SUBSTANCE
     void Start()
     {
         SetTimeUntilSpawn();
+        StartCoroutine(SpawnEntity());
     }
 
-    void Update()
+    IEnumerator SpawnEntity()
     {
-        timeUntilSpawn -= Time.deltaTime;
-
-        if(timeUntilSpawn <= 0){
-            GameObject substance = SubstancePool.SharedInstance.GetSubstance();
-            substance.transform.position = spawnPosition.position;
-            substance.SetActive(true);
+        while(LevelSign.isStoppedSpawn == false)
+        {
+            if(SpawnBadorGood <= 0.75)
+            {
+                yield return new WaitForSeconds(SubstanceTimeUntilSpawn);
+                GameObject substance = SubstancePool.SharedInstance.GetSubstance();
+                substance.SetActive(true);
+            }
+            else
+            {
+                yield return new WaitForSeconds(BadSubstanceTimeUntilSpawn);
+                GameObject bdsubstance = SubstancePool.SharedInstance.GetBadSubstance();
+                bdsubstance.SetActive(true);
+            }
             SetTimeUntilSpawn();
         }
-        
     }
-
     void SetTimeUntilSpawn()
     {
-        timeUntilSpawn = Random.Range(minimumTimeSpawn,maximumTimeSpawn);
+        // chance of getting bad or good substance
+        SpawnBadorGood = Random.Range(0f, 1f);
+
+        SubstanceTimeUntilSpawn = Random.Range(SubstanceMinimumTimeSpawn,SubstanceMaximumTimeSpawn);
+        BadSubstanceTimeUntilSpawn = Random.Range(BadSubstanceMinimumTimeSpawn, BadSubstanceMaximumTimeSpawn);
     }
 }

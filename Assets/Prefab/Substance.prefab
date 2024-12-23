@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8597536773838662343}
   m_Layer: 0
   m_Name: Substance
-  m_TagString: Untagged
+  m_TagString: Substance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea6dc30af2039d46acf04c8d16ccdcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
+  PathWay: []
+  counter: 0
+  PathTotal: 0
 --- !u!114 &3192128960248701882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d003b0d447a3af1498a2a7e7e2e2728b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 0}
 --- !u!50 &4940882837375460910
 Rigidbody2D:
   serializedVersion: 4

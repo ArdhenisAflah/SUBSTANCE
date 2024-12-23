@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class GateManager : MonoBehaviour 
 {
-    public static List<Gate> gateLists = new List<Gate>();
+    public static List<gateAnim> gateLists = new List<gateAnim>();
 
 }
