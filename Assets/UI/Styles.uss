@@ -1,0 +1,77 @@
+*{
+    -unity-font: url("project://database/Assets/UI/UIAssets/RobotoSlab-SemiBold.ttf");
+    -unity-font-definition: initial;
+    -unity-text-align: middle-center;
+    color: #E8EAED;
+}
+
+.header{
+    height: 146px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menus:hover{
+    translate: 0 0;
+    transition-property: translate;
+    transition-duration: 300ms;
+}
+
+.menus{
+    width: 363px;
+    height: 146px;
+    flex-direction: column;
+    translate: 0 -103px;
+    transition-property: translate;
+    transition-duration: 300ms;
+}
+
+.menus-list{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #999999;
+    flex: 1;
+}
+
+.button{
+    width: 66px;
+    height: 66px;
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0 19px;
+    transition-property: border-color;
+    transition-duration: 150ms;
+}
+
+.button:hover{
+    border-color: #E8EAED;
+    border-width: 4px;
+    transition-property: all;
+    transition-duration: 150ms;
+}
+
+.button.exit {
+    background-image: url("project://database/Assets/UI/UIAssets/Exit.png");
+}
+
+.button.settings {
+    background-image: url("project://database/Assets/UI/UIAssets/Settings.png");
+}
+
+.button.pause {
+    background-image: url("project://database/Assets/UI/UIAssets/Pause.png");
+}
+
+
+.menus-hover{
+    height: 43px;
+    align-items: center;
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+    background-color: #5C5C5C;
+}
+
+.menus-hover-label{
+    font-size: 25px;
+}
