@@ -5,10 +5,23 @@
     color: #E8EAED;
 }
 
+.screen{
+    height: 100%;
+    width: 100%;
+}
+
 .header{
     height: 146px;
     align-items: center;
     justify-content: center;
+}
+
+.body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .menus:hover{
@@ -40,15 +53,26 @@
     background-color: transparent;
     border-color: transparent;
     margin: 0 19px;
-    transition-property: border-color;
-    transition-duration: 150ms;
+    transition-property: border-color, width, height;
+    transition-duration: 100ms;
 }
 
 .button:hover{
+    background-color: rgba(0, 0, 0, 0.2);
     border-color: #E8EAED;
     border-width: 4px;
+    width: 72px;
+    height: 72px;
     transition-property: all;
-    transition-duration: 150ms;
+    transition-duration: 50ms;
+}
+
+.button:active{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 75px;
+    height: 75px;
+    transition-property: all;
+    transition-duration: 25ms;
 }
 
 .button.exit {
@@ -63,6 +87,10 @@
     background-image: url("project://database/Assets/UI/UIAssets/Pause.png");
 }
 
+.button.continue {
+    background-image: url("project://database/Assets/UI/UIAssets/Continue.png");
+}
+
 
 .menus-hover{
     height: 43px;
@@ -74,4 +102,86 @@
 
 .menus-hover-label{
     font-size: 25px;
+}
+
+.exit-check{
+    width: 363px;
+    height: 200px;
+    padding: 0px;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 200ms;
+}
+
+.exit-check.active{
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+.exit-check-desc{
+    width: 363px;
+    height: 200px;
+    flex: 1;
+    background-color: #5C5C5C;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.exit-check-text{
+    white-space: nowrap;
+    font-size: 34px;
+    text-overflow: clip;
+}
+
+
+.exit-check-button{
+    margin: 0px;
+    flex-direction: row;
+    height: 66px;
+}
+
+.button-verify{
+    margin: 0 0;
+    border-color: #5C5C5C;
+    border-width: 4px;
+    font-size: 22px;
+    flex: 1;
+    transition-property: border-color, border-width, font-size;
+    transition-duration: 50ms;
+}
+
+.button-verify:hover{
+    border-color: #E8EAED;
+    border-width: 4px;
+    font-size: 25px;
+    transition-property: all;
+    transition-duration: 50ms;    
+}
+
+.button-verify.yes{
+    background-color:#3fb843;
+    transition-property: all;
+    transition-duration: 25ms;
+}
+
+.button-verify.no{
+    background-color:#b83f3f;
+    transition-property: all;
+    transition-duration: 25ms;
+}
+
+.button-verify.yes:active{
+    background-color:rgb(48, 136, 51);
+    
+    transition-property: all;
+    transition-duration: 25ms;
+}
+
+.button-verify.no:active{
+    background-color:rgb(136, 48, 48);
+    
+    transition-property: all;
+    transition-duration: 25ms;
 }
