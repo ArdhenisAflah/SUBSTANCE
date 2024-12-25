@@ -9,11 +9,11 @@ public class MoveSubstance : MonoBehaviour
     private float speed = 3f;
     public int counter;
     public int PathTotal;
-
-    // Start is called before the first frame update
+    public int Level;
     void OnEnable()
     {
-        Transform currentPath = PathWay[Random.Range(0,4)].transform;
+        // get path how many each level from static class levelpath and get level to get level from endgamemanager
+        Transform currentPath = PathWay[Random.Range(0,LevelPath.paths[Level])].transform;
         // fetching data dari parent PathWay untuk dapetin koordinat dari tiap children nya.
         foreach(Transform obj in currentPath)
         {

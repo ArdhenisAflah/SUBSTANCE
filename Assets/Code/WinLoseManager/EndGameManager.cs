@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class EndGameManager : MonoBehaviour
 {
-    [SerializeField] int Level;
+    public  int Level;
     private int[] pointTarget;
-
-    private SubstanceCounter subscount;
     public GameObject subscountObj;
     
     void Start()
@@ -34,11 +32,8 @@ public class EndGameManager : MonoBehaviour
     void SpawnLimitAndCheckFinal(int howManyGoodSpawn)
     {   
         //collect data how many good substance spawn
-        // int GoodSpawns = LevelSpawn.SpawnHowMany[Level];
-        
-        // Debug.Log("CALLED" + " " + howManyGoodSpawn);
         //Jika stock spawn good habis maka stop game
-        if(howManyGoodSpawn >= 5)
+        if(howManyGoodSpawn >= pointTarget[2])
         {
             // Stop any spawn
             LevelSign.isStoppedSpawn = true;
@@ -52,7 +47,7 @@ public class EndGameManager : MonoBehaviour
         yield return new WaitForSeconds(10);
         // get substanve counter class
         SubstanceCounter subscount = subscountObj.GetComponent<SubstanceCounter>();
-        if(subscount.counterA >= howManyGoodSpawn)
+        if(subscount.counterA >= pointTarget[1])
             {
                 Debug.Log("WIN GOOD HABIS");
                 Time.timeScale = 0;
