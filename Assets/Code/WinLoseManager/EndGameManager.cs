@@ -24,7 +24,7 @@ public class EndGameManager : MonoBehaviour
         // bad substance lose checking
         if(IsSubstance == 0 && howManyfinish == pointTarget[0])
         {
-            Debug.Log("LOSE");
+            Debug.Log("LOSE"); 
             Time.timeScale = 0;
         }
     }
