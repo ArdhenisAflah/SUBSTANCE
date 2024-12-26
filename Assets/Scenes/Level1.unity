@@ -346,8 +346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c779c167676fec44da0b47e74723ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 1
   subscountObj: {fileID: 620581179}
+  levelInfo: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
 --- !u!4 &341517612
 Transform:
   m_ObjectHideFlags: 0
@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b841bdbdd4d9fb147bc73e09c707b5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelInfo: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
 --- !u!1 &342823405
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +753,7 @@ MonoBehaviour:
   SubstanceMaximumTimeSpawn: 2
   BadSubstanceMinimumTimeSpawn: 3
   BadSubstanceMaximumTimeSpawn: 4
+  levelInfo: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
 --- !u!114 &620581183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +942,10 @@ PrefabInstance:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7920084293901724774, guid: eab8fc3c9cf93144ab45d4ff5afff368, type: 3}
+      propertyPath: levelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
     - target: {fileID: 7920084293901724774, guid: eab8fc3c9cf93144ab45d4ff5afff368, type: 3}
       propertyPath: LevelGameManager
       value: 
@@ -2214,6 +2220,10 @@ PrefabInstance:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7136796370084592054, guid: de027d4345d068447a5f7b48c905c9b1, type: 3}
+      propertyPath: levelInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
     - target: {fileID: 7136796370084592054, guid: de027d4345d068447a5f7b48c905c9b1, type: 3}
       propertyPath: LevelGameManager
       value: 

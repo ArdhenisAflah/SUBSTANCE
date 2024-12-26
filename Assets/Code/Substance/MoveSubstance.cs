@@ -8,12 +8,11 @@ public class MoveSubstance : MonoBehaviour
     public List<Transform> targets = new List<Transform>();
     private float speed = 3f;
     public int counter;
-    public int PathTotal;
-    public int Level;
+    public ScriptableObjectsLevelInformation levelInfo;
     void OnEnable()
     {
         // get path how many each level from static class levelpath and get level to get level from endgamemanager
-        Transform currentPath = PathWay[Random.Range(0,LevelPath.paths[Level])].transform;
+        Transform currentPath = PathWay[Random.Range(0,levelInfo.LevelPath)].transform;
         // fetching data dari parent PathWay untuk dapetin koordinat dari tiap children nya.
         foreach(Transform obj in currentPath)
         {

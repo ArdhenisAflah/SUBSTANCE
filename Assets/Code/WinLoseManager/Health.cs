@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private EndGameManager GameManager;
+    [SerializeField] ScriptableObjectsLevelInformation levelInfo;
     private int HealthLevel;
+    public 
     // Start is called before the first frame update
     void Start()
     {
         SubstanceCounter.OnCountedSubstance += VirusDamageUI;
-        GameManager = GetComponent<EndGameManager>();
     }
 
     void OnDisable ()
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     void VirusDamageUI(int substanceType, int howMany)
     {
         // get health per level ini
-        HealthLevel = GameManager.Level;
+        HealthLevel = levelInfo.Level;
         if(substanceType == 0)
         {
             // notifikasi UI

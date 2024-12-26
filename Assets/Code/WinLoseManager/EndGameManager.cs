@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class EndGameManager : MonoBehaviour
 {
-    public  int Level;
-    private int[] pointTarget;
+    private List<int> pointTarget;
     public GameObject subscountObj;
+    [SerializeField] ScriptableObjectsLevelInformation levelInfo;
     
     void Start()
     {
-        //    get level current objective lose
-        pointTarget = LevelMission.objective[Level];
+        //    get level current objective losse
+        pointTarget = levelInfo.LevelObjective;
         SubstanceCounter.OnCountedSubstance +=  CheckObjectiveLose;
         //    get level current objective for spawn limit good substance bro
         SubstanceCounter.OnSpawnGoodCountObject += SpawnLimitAndCheckFinal;
@@ -36,12 +37,12 @@ public class EndGameManager : MonoBehaviour
         if(howManyGoodSpawn >= pointTarget[2])
         {
             // Stop any spawn
-            LevelSign.isStoppedSpawn = true;
-            StartCoroutine(checkWinorLose(howManyGoodSpawn));
+            levelInfo.isStoppedSpawn = true;
+            StartCoroutine(checkWinorLose());
         }
     }
 
-    IEnumerator checkWinorLose(int howManyGoodSpawn)
+    IEnumerator checkWinorLose()
     {
         // tunggu yang spawn masuk gerbang semua
         yield return new WaitForSeconds(10);
