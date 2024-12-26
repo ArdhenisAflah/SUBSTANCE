@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   isStoppedSpawn: 0
-  LevelObjective: 0a000000040000000a000000
+  LevelObjective: 01000000080000000a000000
   LevelPath: 4
