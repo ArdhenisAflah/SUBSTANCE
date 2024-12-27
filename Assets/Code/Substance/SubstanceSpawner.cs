@@ -5,15 +5,6 @@ using UnityEngine;
 public class SubstanceSpawner : MonoBehaviour
 {
 
-    public float SubstanceTimeUntilSpawn;
-    public float BadSubstanceTimeUntilSpawn;
-
-    [SerializeField] float SubstanceMinimumTimeSpawn;
-    [SerializeField] float SubstanceMaximumTimeSpawn;
-
-    [SerializeField] float BadSubstanceMinimumTimeSpawn;
-    [SerializeField] float BadSubstanceMaximumTimeSpawn;
-
     public ScriptableObjectsLevelInformation levelInfo;
 
     private float SpawnBadorGood;
@@ -32,13 +23,13 @@ public class SubstanceSpawner : MonoBehaviour
         {
             if(SpawnBadorGood <= 0.75)
             {
-                yield return new WaitForSeconds(SubstanceTimeUntilSpawn);
+                yield return new WaitForSeconds(levelInfo.LevelTimeSpawns[0].SubstanceTimeUntilSpawn);
                 GameObject substance = SubstancePool.SharedInstance.GetSubstance();
                 substance.SetActive(true);
             }
             else
             {
-                yield return new WaitForSeconds(BadSubstanceTimeUntilSpawn);
+                yield return new WaitForSeconds(levelInfo.LevelTimeSpawns[0].BadSubstanceTimeUntilSpawn);
                 GameObject bdsubstance = SubstancePool.SharedInstance.GetBadSubstance();
                 bdsubstance.SetActive(true);
             }
@@ -50,7 +41,7 @@ public class SubstanceSpawner : MonoBehaviour
         // chance of getting bad or good substance
         SpawnBadorGood = Random.Range(0f, 1f);
 
-        SubstanceTimeUntilSpawn = Random.Range(SubstanceMinimumTimeSpawn,SubstanceMaximumTimeSpawn);
-        BadSubstanceTimeUntilSpawn = Random.Range(BadSubstanceMinimumTimeSpawn, BadSubstanceMaximumTimeSpawn);
+        levelInfo.LevelTimeSpawns[0].SubstanceTimeUntilSpawn = Random.Range(levelInfo.LevelTimeSpawns[0].SubstanceMinimumTimeSpawn,levelInfo.LevelTimeSpawns[0].SubstanceMaximumTimeSpawn);
+        levelInfo.LevelTimeSpawns[0].BadSubstanceTimeUntilSpawn = Random.Range(levelInfo.LevelTimeSpawns[0].BadSubstanceMinimumTimeSpawn, levelInfo.LevelTimeSpawns[0].BadSubstanceMaximumTimeSpawn);
     }
 }
