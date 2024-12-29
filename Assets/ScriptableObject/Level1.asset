@@ -15,14 +15,14 @@ MonoBehaviour:
   Level: 1
   isStoppedSpawn: 0
   LevelObjectives:
-  - badSubstanceMax: 1
-    goodSubstancePassGrade: 8
-    goodSubstanceStock: 10
+  - badSubstanceMax: 10
+    goodSubstancePassGrade: 50
+    goodSubstanceStock: 80
   LevelTimeSpawns:
-  - SubstanceTimeUntilSpawn: 0
-    SubstanceMinimumTimeSpawn: 1
-    SubstanceMaximumTimeSpawn: 2
-    BadSubstanceTimeUntilSpawn: 0
-    BadSubstanceMinimumTimeSpawn: 3
-    BadSubstanceMaximumTimeSpawn: 4
+  - SubstanceTimeUntilSpawn: 0.60188955
+    SubstanceMinimumTimeSpawn: 0.5
+    SubstanceMaximumTimeSpawn: 1
+    BadSubstanceTimeUntilSpawn: 1.5134192
+    BadSubstanceMinimumTimeSpawn: 1
+    BadSubstanceMaximumTimeSpawn: 2
   LevelPath: 4

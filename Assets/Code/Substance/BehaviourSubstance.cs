@@ -8,6 +8,12 @@ public class BehaviourSubstance : MonoBehaviour
 {
     public static event Action<string> OnFinishCountObject;
     public static event Action OnSpawnGoodCountObject;
+    public AudioClip explosion;
+
+    void Awake()
+    {
+        
+    }
     public static void WhenFinish(GameObject obj)
     {
         // this goes mainly to the substance counter
@@ -23,7 +29,8 @@ public class BehaviourSubstance : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.CompareTag("Gate")){
-            // Debug.Log("Slayed");
+            // explosion effect suara (plis bekerjaa jangan error lagi ya)
+            AudioManager.Instance.playSFX(explosion);
             // reset
             this.gameObject.SetActive(false);
         }
