@@ -370,6 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subscountObj: {fileID: 620581179}
   levelInfo: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
+  uiManager: {fileID: 1336936747}
 --- !u!4 &341517612
 Transform:
   m_ObjectHideFlags: 0
@@ -398,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelInfo: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
+  uiManager: {fileID: 1336936747}
 --- !u!1 &342823405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiDoc: {fileID: 376605949}
+  levelInfo: {fileID: 11400000, guid: 3980f416fbe4f264ca10d5df2704f551, type: 2}
 --- !u!1 &1359267810
 GameObject:
   m_ObjectHideFlags: 0

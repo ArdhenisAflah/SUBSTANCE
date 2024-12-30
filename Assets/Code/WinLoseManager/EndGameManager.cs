@@ -12,7 +12,7 @@ public class EndGameManager : MonoBehaviour
     
     void Start()
     {
-        //    get level current objective losse
+        //    get level current objective lose
         pointTarget = levelInfo.LevelObjectives;
         SubstanceCounter.OnCountedSubstance +=  CheckObjectiveLose;
         //    get level current objective for spawn limit good substance bro
@@ -25,7 +25,6 @@ public class EndGameManager : MonoBehaviour
         // bad substance lose checking
         if(IsSubstance == 0 && howManyfinish == pointTarget[0].badSubstanceMax)
         {
-            Debug.Log("LOSE"); 
             Time.timeScale = 0;
         }
     }
