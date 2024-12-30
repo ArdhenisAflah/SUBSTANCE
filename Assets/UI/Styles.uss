@@ -5,6 +5,12 @@
     color: #E8EAED;
 }
 
+.universal {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
 .screen{
     height: 100%;
     width: 100%;
@@ -12,7 +18,6 @@
 
 .header{
     height: 146px;
-    align-items: center;
     justify-content: center;
 }
 
@@ -31,6 +36,9 @@
 }
 
 .menus{
+    align-self: flex-end;
+
+    margin-right: 80px;
     width: 363px;
     height: 146px;
     flex-direction: column;
@@ -191,4 +199,71 @@
     
     transition-property: all;
     transition-duration: 25ms;
+}
+
+.objective-panel {
+    align-self: flex-start;
+    margin: 45px 0 0 70px;
+    height: 175px;
+    width: 373px;
+}
+
+.objective-panel-title {
+    height: 50px;
+    font-size: 25px;
+    background-color: #5C5C5C;
+
+    border-radius: 20px 20px 0 0;
+    border-color: #E8EAED;
+    border-width: 3px 3px 0px 3px;
+}
+
+.objective-panel-count {
+    flex: 1;
+    background-color: #999999;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    padding: 0 25px;
+
+    border-radius: 0 0 20px 20px;
+    border-color: #E8EAED;
+    border-width: 3px 3px 3px 3px;
+}
+
+.objective-panel-counter {
+    flex-direction: row;
+}
+
+.objective-panel-count-panel {
+    flex-direction: row;
+}
+
+.count-space {
+    margin: 0 5px;
+}
+
+.objective-panel-count-icon {
+    width: 65px;
+    height: 65px;
+}
+
+.objective-panel-count-icon.ally {
+    background-image: url("project://database/Assets/UI/UIAssets/Ally.png"); 
+}
+
+.objective-panel-count-icon.enemy {
+    background-image: url("project://database/Assets/UI/UIAssets/Enemy.png"); 
+}
+
+.count-text{
+    font-size: 32px;
+}
+
+.objective-panel-count-X {
+    
+}
+
+.objective-panel-count-counter {
+
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] ScriptableObjectsLevelInformation levelInfo;
+    [SerializeField] UIManager uiManager;
     private int HealthLevel;
     public 
     // Start is called before the first frame update
@@ -24,8 +25,11 @@ public class Health : MonoBehaviour
         HealthLevel = levelInfo.Level;
         if(substanceType == 0)
         {
-            // notifikasi UI
-            Debug.Log("Darah berkurang");
+            uiManager.OnBadEnter();
+        }
+        else if(substanceType == 1)
+        {
+            uiManager.OnGoodEnter();
         }
     }
 }

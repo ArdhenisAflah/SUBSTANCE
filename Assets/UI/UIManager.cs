@@ -8,11 +8,18 @@ using UnityEngine.UIElements;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private UIDocument uiDoc;
+    [SerializeField] ScriptableObjectsLevelInformation levelInfo;
     private VisualElement rootEL;
     private VisualElement buttonMenuEL;
     private List<Button> buttonMEL;
     private VisualElement buttonExitEL;
     private List<Button> buttonEEL;
+    private VisualElement objectiveEL;
+    private List<Label> objectiveLabelEL;
+
+    private int badSubsTarget;
+    private int goodSubsTarget;
+
 
     private void OnEnable() {
         rootEL = uiDoc.rootVisualElement;
@@ -20,13 +27,22 @@ public class UIManager : MonoBehaviour
         buttonMEL = buttonMenuEL.Query<Button>().ToList();
         buttonExitEL = rootEL.Q(className: "exit-check");
         buttonEEL = buttonExitEL.Query<Button>().ToList();
-    }
-    private void Start() {
+        objectiveEL = rootEL.Q(className: "objective-panel-count");
+        objectiveLabelEL = objectiveEL.Query<Label>().ToList();
+
         buttonMEL[0].clickable.clicked += (ExitButtonHandler);
         buttonMEL[1].clickable.clicked += (SettingsButtonHandler);
         buttonMEL[2].clickable.clicked += (PauseButtonHandler);
         buttonEEL[0].clickable.clicked += (ExitButtonHandlerYes);
         buttonEEL[1].clickable.clicked += (ExitButtonHandlerNo);
+
+        badSubsTarget = levelInfo.LevelObjectives[0].badSubstanceMax;
+        goodSubsTarget = levelInfo.LevelObjectives[0].goodSubstancePassGrade;
+    }
+
+    private void Update(){
+        objectiveLabelEL[0].text = string.Format("{0}", goodSubsTarget);
+        objectiveLabelEL[1].text = string.Format("{0}", badSubsTarget);
     }
 
     private void ExitButtonHandler()
@@ -56,4 +72,13 @@ public class UIManager : MonoBehaviour
         Debug.Log("Exit");
     }
 
+    public void OnBadEnter()
+    {
+        badSubsTarget -= 1;
+    }
+    public void OnGoodEnter()
+    {
+        goodSubsTarget -= 1;
+
+    }
 }

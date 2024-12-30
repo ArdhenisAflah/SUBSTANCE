@@ -9,6 +9,7 @@ public class EndGameManager : MonoBehaviour
     private List<LevelObj> pointTarget;
     public GameObject subscountObj;
     [SerializeField] ScriptableObjectsLevelInformation levelInfo;
+    [SerializeField] UIManager uiManager;
     
     void Start()
     {
@@ -25,7 +26,6 @@ public class EndGameManager : MonoBehaviour
         // bad substance lose checking
         if(IsSubstance == 0 && howManyfinish == pointTarget[0].badSubstanceMax)
         {
-            Debug.Log("LOSE"); 
             Time.timeScale = 0;
         }
     }
