@@ -23,10 +23,13 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable() {
         rootEL = uiDoc.rootVisualElement;
+        
         buttonMenuEL = rootEL.Q(className: "menus-list");
         buttonMEL = buttonMenuEL.Query<Button>().ToList();
+        
         buttonExitEL = rootEL.Q(className: "exit-check");
         buttonEEL = buttonExitEL.Query<Button>().ToList();
+        
         objectiveEL = rootEL.Q(className: "objective-panel-count");
         objectiveLabelEL = objectiveEL.Query<Label>().ToList();
 
@@ -75,10 +78,15 @@ public class UIManager : MonoBehaviour
     public void OnBadEnter()
     {
         badSubsTarget -= 1;
+        if (badSubsTarget <= 0){
+            badSubsTarget = 0;
+        }
     }
     public void OnGoodEnter()
     {
         goodSubsTarget -= 1;
-
+        if (goodSubsTarget <= 0){
+            goodSubsTarget = 0;
+        }
     }
 }

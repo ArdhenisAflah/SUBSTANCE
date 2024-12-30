@@ -9,7 +9,6 @@ public class EndGameManager : MonoBehaviour
     private List<LevelObj> pointTarget;
     public GameObject subscountObj;
     [SerializeField] ScriptableObjectsLevelInformation levelInfo;
-    [SerializeField] UIManager uiManager;
     
     void Start()
     {
