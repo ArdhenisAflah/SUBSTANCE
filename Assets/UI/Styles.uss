@@ -98,7 +98,7 @@
     background-image: url("project://database/Assets/UI/UIAssets/Pause.png");
 }
 
-.button.continue {
+.button.pause.continue {
     background-image: url("project://database/Assets/UI/UIAssets/Continue.png");
 }
 

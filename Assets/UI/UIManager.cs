@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour
 
     private int badSubsTarget;
     private int goodSubsTarget;
+    private bool isPaused;
+    private bool isOnScreen;
+    private int buttonIndex;
 
 
     private void OnEnable() {
@@ -46,33 +49,75 @@ public class UIManager : MonoBehaviour
     private void Update(){
         objectiveLabelEL[0].text = string.Format("{0}", goodSubsTarget);
         objectiveLabelEL[1].text = string.Format("{0}", badSubsTarget);
+        GamePaused();
+    }
+
+    private void GamePaused(){
+        if(isPaused){
+            Time.timeScale = 0;
+        }else if(!isPaused){
+            Time.timeScale = 1f;
+        }
     }
 
     private void ExitButtonHandler()
     {
-        buttonExitEL.AddToClassList("active");
-        Time.timeScale = 0;
+        if(!isOnScreen)
+        {
+            buttonExitEL.AddToClassList("active");
+            isOnScreen = true;
+            isPaused = true;
+            buttonIndex = 1;
+        }else if (isOnScreen && buttonIndex == 1)
+        {
+            buttonExitEL.RemoveFromClassList("active");
+            isOnScreen = false;
+            isPaused = false;
+        }
     }
 
     private void ExitButtonHandlerYes()
     {
         SceneManager.LoadScene(0);
+        isPaused = false;
     }
 
     private void ExitButtonHandlerNo()
     {
         buttonExitEL.RemoveFromClassList("active");
-        Time.timeScale = 1f;
+        isOnScreen = true;
+        isPaused = false;
     }
 
     private void SettingsButtonHandler()
     {
-        Debug.Log("Settings");
+        if(!isOnScreen)
+        {
+            isOnScreen = true;
+            isPaused = true;
+            buttonIndex = 2;
+        }else if (isOnScreen && buttonIndex == 2)
+        {
+            isOnScreen = false;
+            isPaused = false;
+        }
     }
 
     private void PauseButtonHandler()
     {
-        Debug.Log("Exit");
+        if(!isOnScreen)
+        {
+            buttonMEL[2].AddToClassList("continue");
+            isPaused = true;
+            isOnScreen = true;
+            buttonIndex = 3;
+        }
+        else if (isOnScreen && buttonIndex == 3)
+        {
+            buttonMEL[2].RemoveFromClassList("continue");
+            isPaused = false;
+            isOnScreen = false;
+        }
     }
 
     public void OnBadEnter()

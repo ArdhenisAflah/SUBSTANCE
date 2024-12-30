@@ -12,7 +12,7 @@ public class EndGameManager : MonoBehaviour
     
     void Start()
     {
-        //    get level current objective losse
+        //    get level current objective lose
         pointTarget = levelInfo.LevelObjectives;
         SubstanceCounter.OnCountedSubstance +=  CheckObjectiveLose;
         //    get level current objective for spawn limit good substance bro
