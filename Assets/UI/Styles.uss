@@ -5,15 +5,15 @@
     color: #E8EAED;
 }
 
+.screen{
+    height: 100%;
+    width: 100%;
+}
+
 .universal {
     height: 100%;
     width: 100%;
     position: absolute;
-}
-
-.screen{
-    height: 100%;
-    width: 100%;
 }
 
 .header{
@@ -29,33 +29,27 @@
     align-items: center;
 }
 
-.menus:hover{
-    translate: 0 0;
-    transition-property: translate;
-    transition-duration: 300ms;
-}
-
 .menus{
-    align-self: flex-end;
+    align-self: flex-start;
+    justify-content: center;
 
-    margin-right: 80px;
+    margin-left: 80px;
     width: 363px;
-    height: 146px;
+    height: 136px;
     flex-direction: column;
-    translate: 0 -103px;
-    transition-property: translate;
-    transition-duration: 300ms;
+
+    translate: 0 -24px;
 }
 
 .menus-list{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #999999;
+    background-position-x: center;
+    background-size: 540%;
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Menu.PNG");
+    padding: 2px 0 0 13px;
     flex: 1;
-
-    border-color: #E8EAED;
-    border-width: 0 3px 3px 3px;
 }
 
 .button{
@@ -63,23 +57,20 @@
     height: 66px;
     background-color: transparent;
     border-color: transparent;
+    background-size: 2650%;
     margin: 0 19px;
-    transition-property: border-color, width, height;
+    transition-property: background-size;
     transition-duration: 100ms;
 }
 
-.button:hover{
-    background-color: rgba(0, 0, 0, 0.2);
-    border-color: #E8EAED;
-    border-width: 4px;
-    width: 72px;
-    height: 72px;
-    transition-property: all;
-    transition-duration: 50ms;
+.button:hover {
+    background-size: 2800%;
+    transition-property: background-size;
+    transition-duration: 100ms;
 }
 
 .button:active{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     width: 75px;
     height: 75px;
     transition-property: all;
@@ -87,19 +78,35 @@
 }
 
 .button.exit {
-    background-image: url("project://database/Assets/UI/UIAssets/Exit.png");
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Exit.PNG");
+}
+
+.button.exit:hover {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Exit Hovered.PNG");
 }
 
 .button.settings {
-    background-image: url("project://database/Assets/UI/UIAssets/Settings.png");
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Setting.PNG");
+}
+
+.button.settings:hover {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Setting Hovered.PNG");
 }
 
 .button.pause {
-    background-image: url("project://database/Assets/UI/UIAssets/Pause.png");
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Pause.PNG");
+}
+
+.button.pause:hover {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Pause Hovered.PNG");
 }
 
 .button.pause.continue {
-    background-image: url("project://database/Assets/UI/UIAssets/Continue.png");
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Start.PNG");
+}
+
+.button.pause.continue:hover {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Menu/Start Hovered.PNG");
 }
 
 
@@ -202,33 +209,91 @@
 }
 
 .objective-panel {
-    align-self: flex-start;
-    margin: 45px 0 0 70px;
+    align-self: flex-end;
+    flex-direction: row;
+    margin: 45px 70px 0 0;
     height: 175px;
-    width: 373px;
+    width: 420px;
+}
+
+.objective-panel-content{
+    translate: -5px 0;
+    width: 100%;
+}
+
+.objective-panel-show-button{
+    height: 52px;
+    width: 85px;
+
+    translate: 0 -2px;
+    background-position: center;
+    
+    background-color: transparent;
+    border-color: transparent;
+
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Objective/Arrow Closed.PNG");
+    background-size: 2200%;
+    margin: 0 0;
+}
+
+.objective-panel-show-button:hover {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Objective/Arrow Closed Hovered.PNG");
+}
+
+.objective-panel-show-button.active {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Objective/Arrow Opened .PNG");
+}
+
+.objective-panel-show-button.active:hover {
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Objective/Arrow Opened Hovered.PNG");
+}
+
+.objective-panel-show{
+    height: 50px;
+    width: 100%;
+    flex-direction: row;
 }
 
 .objective-panel-title {
     height: 50px;
     font-size: 25px;
-    background-color: #5C5C5C;
-
-    border-radius: 20px 20px 0 0;
-    border-color: #E8EAED;
-    border-width: 3px 3px 0px 3px;
+    background-color: #637C9B;
+    border-color: #245075;
+    border-width: 3px 3px;
+    margin: 0 0;
+    flex: 1;
 }
 
 .objective-panel-count {
-    flex: 1;
-    background-color: #999999;
+    
+    height: 0%;
+    background-color: #637C9B;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
     padding: 0 25px;
 
     border-radius: 0 0 20px 20px;
-    border-color: #E8EAED;
-    border-width: 3px 3px 3px 3px;
+    border-color: #245075;
+    border-width: 0 3px 3px 3px;
+
+    flex: 0;
+    opacity: 0;
+
+    transition-property: height, flex, opacity;
+    transition-duration: 100ms;
+}
+
+.objective-panel-count.active {
+    height: 100%;
+    flex: 1;
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 100ms;
+}
+
+.objective-panel-count.active {
+    
 }
 
 .objective-panel-counter {
@@ -249,21 +314,15 @@
 }
 
 .objective-panel-count-icon.ally {
-    background-image: url("project://database/Assets/UI/UIAssets/Ally.png"); 
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Objective/Data Counter.PNG");
+    background-size: 900%;
 }
 
 .objective-panel-count-icon.enemy {
-    background-image: url("project://database/Assets/UI/UIAssets/Enemy.png"); 
+    background-image: url("project://database/Assets/UI/UIAssets/UI/Objective/Virus Counter.PNG");
+    background-size: 900%;
 }
 
 .count-text{
     font-size: 32px;
-}
-
-.objective-panel-count-X {
-    
-}
-
-.objective-panel-count-counter {
-
 }

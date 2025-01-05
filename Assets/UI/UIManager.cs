@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     private List<Button> buttonEEL;
     private VisualElement objectiveEL;
     private List<Label> objectiveLabelEL;
+    private Button buttonShowObj;
 
     private int badSubsTarget;
     private int goodSubsTarget;
@@ -35,6 +36,10 @@ public class UIManager : MonoBehaviour
         
         objectiveEL = rootEL.Q(className: "objective-panel-count");
         objectiveLabelEL = objectiveEL.Query<Label>().ToList();
+
+        buttonShowObj = rootEL.Q<Button>(className: "objective-panel-show-button");
+
+        buttonShowObj.clickable.clicked += (ShowObjectiveHandler);
 
         buttonMEL[0].clickable.clicked += (ExitButtonHandler);
         buttonMEL[1].clickable.clicked += (SettingsButtonHandler);
@@ -133,5 +138,18 @@ public class UIManager : MonoBehaviour
         if (goodSubsTarget <= 0){
             goodSubsTarget = 0;
         }
+    }
+
+    private void ShowObjectiveHandler() {
+        if (buttonShowObj.ClassListContains("active"))
+        {
+            buttonShowObj.RemoveFromClassList("active");
+            objectiveEL.RemoveFromClassList("active");
+        }
+        else
+        {
+            buttonShowObj.AddToClassList("active");
+            objectiveEL.AddToClassList("active");
+        }  
     }
 }
