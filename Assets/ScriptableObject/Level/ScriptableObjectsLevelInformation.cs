@@ -42,6 +42,7 @@ public class LevelTimeSpawn
     }
 }
 
+
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObject/ScriptableObjectsLevelInformation", order = 1)]
 public class ScriptableObjectsLevelInformation : ScriptableObject
 {
